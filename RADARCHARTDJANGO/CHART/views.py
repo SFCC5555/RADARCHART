@@ -1,7 +1,10 @@
+from binascii import a2b_hex
 from django import forms
 from django.http import HttpResponse
 from django.shortcuts import render
-
+import plotly.express as px
+import pandas as pd
+from fpdf import FPDF
 valores = []
 
 class NuevoValor(forms.Form):
@@ -96,6 +99,13 @@ def enviar(request):
     })
 
 def resultados(request):
+    df = pd.DataFrame(dict(
+        r=valores,
+        theta=['pregunta1','pregunta2','pregunta3',
+            'pregunta4', 'pregunta5']))
+    fig = px.line_polar(df, r='r', theta='theta', line_close=True)
+    fig.show()
     return render(request, "CHART/resultados.html", {
         "valores":valores
     })
+
