@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>PREGUNTA 1</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'CHART/styles.css' %}"/>
+    </head>
+    <body>
+        <h1>PREGUNTA 1</h1>
+        <section class="boton">
+        <form action="{% url 'CHART:pregunta2' %}" method="post">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit">
+        </form>
+        </section>
+
+    </body>
+</html>

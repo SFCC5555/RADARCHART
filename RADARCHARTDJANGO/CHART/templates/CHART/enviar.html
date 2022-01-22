@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>ENVIAR</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'CHART/styles.css' %}"/>
+    </head>
+    <body>
+        <h1>LISTO?</h1>
+        <section class="boton">
+            <form action="{% url 'CHART:resultados' %}" method="post">
+                {% csrf_token %}
+                <input type="submit">
+            </form>
+        </section>
+
+    </body>
+</html>

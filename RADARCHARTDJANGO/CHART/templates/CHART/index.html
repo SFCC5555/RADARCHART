@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>RADARCHART</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'CHART/styles.css' %}"/>
+    </head>
+    <body>
+        <h1>BIENVENIDO</h1>
+        <section class="boton">
+            <a href= "{% url 'CHART:pregunta1' %}"><button>COMENZAR CHART</button></a>
+        </section>
+
+    </body>
+</html>
